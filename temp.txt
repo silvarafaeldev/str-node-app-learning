@@ -1,0 +1,3 @@
+-- links de apoio:
+- https://willianliketavares.medium.com/geolocaliza%C3%A7%C3%A3o-no-nodejs-com-postgres-postgis-f22819e82c68
+- https://sequelize.org/v5/manual/migrations
