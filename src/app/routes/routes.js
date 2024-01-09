@@ -1,15 +1,12 @@
 import { Router } from "express";
-import NycNeighborhoodsController from "../controller/NycNeighborhoodsController.js";
-import NycHomicidesController from "../controller/NycHomicidesController.js";
+import BCListiningController from "../controller/BCListiningController.js";
+import BCNeighbourhoodController from "../controller/BCNeighbourhoodController.js";
 
 const router = Router();
 
-router.get(
-  "/neighborhoods/boronames",
-  NycNeighborhoodsController.showNycNeighbourhoodBoronames
-);
-router.get("/homicides",            NycHomicidesController.showNycHomicides);
-router.get("/homicides/:boroname",  NycHomicidesController.showNycHomicidesByBoroname);
-router.delete("/homicides/:gid",    NycHomicidesController.deleteHomicideByGid);
+router.get("/listining", BCListiningController.fetchAllRentalMarkers);
+router.get("/listining/neighbourhood/:group", BCListiningController.fetchAllRentalMarkersByNeighbourhoodGroup);
+router.delete("/listining/:id", BCListiningController.deleteRentalMarkerById)
+router.get("/neighbourhood", BCNeighbourhoodController.fetchAllNeighbourhoods)
 
 export default router;
